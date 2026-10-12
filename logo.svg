@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Massively Multimodal Foundation Models logo">
+  <g stroke="#a5b4fc" stroke-width="2.5" stroke-linecap="round">
+    <line x1="40" y1="40" x2="32" y2="32"/>
+    <line x1="60" y1="40" x2="68" y2="32"/>
+    <line x1="40" y1="60" x2="32" y2="68"/>
+    <line x1="60" y1="60" x2="68" y2="68"/>
+  </g>
+  <g transform="translate(14,14)" fill="#6366f1">
+    <rect x="0" y="0" width="7" height="7" rx="1.2"/>
+    <rect x="9" y="0" width="7" height="7" rx="1.2" opacity="0.55"/>
+    <rect x="0" y="9" width="7" height="7" rx="1.2" opacity="0.55"/>
+    <rect x="9" y="9" width="7" height="7" rx="1.2"/>
+  </g>
+  <g transform="translate(70,14)" fill="#06b6d4">
+    <rect x="0" y="5" width="2" height="9" rx="1"/>
+    <rect x="4" y="1" width="2" height="17" rx="1"/>
+    <rect x="8" y="4" width="2" height="11" rx="1"/>
+    <rect x="12" y="2" width="2" height="14" rx="1"/>
+  </g>
+  <polyline points="14,80 19,74 24,82 30,73" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#ec4899" stroke-width="2.5" stroke-linecap="round" fill="none">
+    <path d="M 73 82 A 5 5 0 0 1 83 82"/>
+    <path d="M 70 82 A 8 8 0 0 1 86 82"/>
+  </g>
+  <circle cx="78" cy="82" r="2.5" fill="#ec4899"/>
+  <rect x="38" y="38" width="24" height="24" rx="5" fill="#ffffff" stroke="#312e81" stroke-width="2.5"/>
+  <g fill="#312e81">
+    <circle cx="46" cy="50" r="1.7"/>
+    <circle cx="50" cy="50" r="1.7"/>
+    <circle cx="54" cy="50" r="1.7"/>
+  </g>
+</svg>

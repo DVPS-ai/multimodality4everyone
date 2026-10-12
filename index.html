@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multimodality For Everyone (M4E) — ELLIS UnConference</title>
+  <meta name="description" content="Multimodality For Everyone (M4E), a two-hour session at the ELLIS UnConference. Palais des Congrès de Paris, 8 December 2026." />
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+    /* Reset */
+    html { box-sizing: border-box; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    *, *::before, *::after { box-sizing: inherit; }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1e293b;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(14, 165, 233, 0.10) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+        #f8fafc;
+      background-attachment: fixed;
+    }
+
+    a { color: #4f46e5; }
+    a:hover { color: #3730a3; }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 100%);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      color: #fff;
+      border-bottom: 3px solid #6366f1;
+    }
+    header .logo {
+      width: clamp(96px, 14vw, 140px);
+      height: auto;
+      display: block;
+      margin: 0 auto 1.25rem;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+    }
+    header h1 {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    header .tagline {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      margin: 0.5rem 0;
+      font-style: italic;
+    }
+    header .meta {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin: 0.25rem 0;
+    }
+    header .meta a { color: #c7d2fe; }
+    header .meta a:hover { color: #fff; }
+    header .sponsor-box {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.9rem 1.6rem 0.75rem;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 16px;
+    }
+    header .sponsor-label {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+    header .sponsor-links {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2.5rem;
+      margin: 0.85rem 0 0.1rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    header .sponsor-links a {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+      margin: 0;
+      color: #c7d2fe;
+      text-decoration: none;
+    }
+    header .sponsor-links a span {
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+    header .sponsor-links .logo-slot {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    header .sponsor-links img {
+      display: block;
+      width: auto;
+    }
+    header .sponsor-links .logo-dvps { height: 52px; }
+    header .sponsor-links .logo-elliot { height: 28px; }
+    header .sponsor-links a:hover { color: #fff; }
+    header .sponsor-links a:hover img { opacity: 0.8; }
+
+    /* Sticky Navigation (separate from header) */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+      text-align: center;
+      padding: 0.85rem 1rem;
+      line-height: 1.4;
+    }
+    .nav-bar a {
+      margin: 0 0.6rem;
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      transition: color 0.2s;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+    .nav-bar a:hover { color: #4f46e5; }
+    .nav-bar a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 2px;
+      background: #4f46e5;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.2s ease;
+    }
+    .nav-bar a:hover::after { transform: scaleX(1); }
+
+    /* Sections */
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2.25rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+      border: 1px solid #e2e8f0;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid #e0e7ff;
+      color: #1e1b4b;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+      color: #312e81;
+    }
+
+    ul, ol { padding-left: 1.25rem; }
+    li { margin-bottom: 0.4rem; }
+
+    /* Schedule table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    table th {
+      background: #f1f5f9;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid #e2e8f0;
+    }
+    table td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid #e2e8f0;
+      vertical-align: top;
+      transition: background 0.15s ease;
+    }
+    table tbody tr:hover td {
+      background: #eef2ff;
+    }
+    tr.break td {
+      background: #f8fafc;
+      color: #64748b;
+      font-style: italic;
+    }
+    table tbody tr.break:hover td {
+      background: #f1f5f9;
+    }
+    .talk-title {
+      font-style: italic;
+      color: #4f46e5;
+    }
+
+    /* People grid */
+    .people {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .person {
+      text-align: center;
+      padding: 0.75rem 0.5rem;
+      border-radius: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .person:hover {
+      transform: translateY(-3px);
+      background: #fafbff;
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.10);
+    }
+    .person .headshot {
+      width: clamp(78.6px, 13.1vw, 104.9px);
+      height: clamp(78.6px, 13.1vw, 104.9px);
+      border-radius: 50%;
+      object-fit: cover;
+      display: inline-block;
+      margin-bottom: 0.4rem;
+      border: 2px solid #e0e7ff;
+    }
+    .person .initials {
+      width: clamp(78.6px, 13.1vw, 104.9px);
+      height: clamp(78.6px, 13.1vw, 104.9px);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.52rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    #organizers .people {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    #organizers .person:nth-child(9) { grid-column: 2; }
+    #organizers .person:nth-child(10) { grid-column: 3; }
+    .person .name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin: 0.2rem 0;
+    }
+    .person .affiliation {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin: 0;
+    }
+    .person .talk {
+      font-size: 0.78rem;
+      color: #4f46e5;
+      font-style: italic;
+      margin: 0.25rem 0 0;
+    }
+
+    /* Initials color palette */
+    .init-1 { background: #4f46e5; }
+    .init-2 { background: #7c3aed; }
+    .init-3 { background: #0891b2; }
+    .init-4 { background: #059669; }
+    .init-5 { background: #d97706; }
+    .init-6 { background: #dc2626; }
+    .init-7 { background: #4338ca; }
+    .init-8 { background: #9333ea; }
+    .init-9 { background: #0d9488; }
+    .init-10 { background: #ca8a04; }
+    .init-11 { background: #be185d; }
+    .init-12 { background: #1d4ed8; }
+
+    /* Organization logos: three on the first row, two centered on the second */
+    .org-logos {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 1.75rem 2.5rem;
+      align-items: center;
+      justify-items: center;
+      margin-top: 2.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid #e2e8f0;
+    }
+    .org-logos a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: span 2;
+      width: 100%;
+      height: 64px;
+      text-decoration: none;
+    }
+    .org-logos a:nth-child(4) { grid-column: 2 / span 2; }
+    .org-logos a:nth-child(5) { grid-column: 4 / span 2; }
+    .org-logos img {
+      display: block;
+      max-height: 52px;
+      max-width: min(210px, 100%);
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    .org-logos a:hover img { opacity: 0.75; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+    footer a { color: #4f46e5; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      header { padding: 2rem 1rem 1.5rem; }
+      .nav-bar { padding: 0.6rem 0.5rem; overflow-x: auto; white-space: nowrap; }
+      .nav-bar a { margin: 0 0.4rem; font-size: 0.8rem; }
+      section { margin: 2rem 0.5rem; padding: 1.25rem; border-radius: 8px; }
+      .people,
+      #organizers .people { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+      .org-logos { gap: 1.25rem 1.5rem; }
+      .org-logos a { height: 56px; }
+      .org-logos img { max-height: 44px; max-width: min(160px, 100%); }
+      #organizers .person:nth-child(9),
+      #organizers .person:nth-child(10) { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="logo" src="logo.svg" alt="Multimodality For Everyone" />
+  <h1>Multimodality For Everyone (M4E)</h1>
+  <p class="tagline">Making multimodal foundation models extendable, reusable, and accessible.</p>
+  <p class="meta">ELLIS UnConference &middot; Palais des Congrès de Paris &middot; 8 December 2026</p>
+  <div class="sponsor-box">
+    <p class="sponsor-label">Sponsored by Europe Horizon projects</p>
+    <p class="sponsor-links">
+      <a href="https://dvps.translated.com/" target="_blank" rel="noopener">
+        <span class="logo-slot"><img class="logo-dvps" src="logos/dvps.webp" alt="" /></span>
+        <span>DVPS</span>
+      </a>
+      <a href="https://elliot-ai.eu/" target="_blank" rel="noopener">
+        <span class="logo-slot"><img class="logo-elliot" src="logos/elliot.svg" alt="" /></span>
+        <span>ELLIOT</span>
+      </a>
+    </p>
+  </div>
+</header>
+
+<nav class="nav-bar">
+  <a href="#about">About</a>
+  <a href="#speakers">Speakers</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#organizers">Organizers</a>
+</nav>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <h2>About</h2>
+  <p>TODO</p>
+</section>
+
+<!-- ============ SPEAKERS ============ -->
+<section id="speakers">
+  <h2>Invited Speakers</h2>
+  <div class="people">
+
+    <div class="person">
+      <div class="initials init-1">YA</div>
+      <p class="name"><a href="https://yukimasano.github.io/" target="_blank" rel="noopener">Yuki Asano</a></p>
+      <p class="affiliation">University of Technology Nuremberg</p>
+      <p class="talk">Title to be defined</p>
+    </div>
+
+    <div class="person">
+      <div class="initials init-3">DE</div>
+      <p class="name"><a href="https://elliottd.github.io/" target="_blank" rel="noopener">Desmond Elliot</a></p>
+      <p class="affiliation">University of Copenhagen</p>
+      <p class="talk">Title to be defined</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SCHEDULE ============ -->
+<section id="schedule">
+  <h2>Schedule</h2>
+  <p>Times are offsets from the start of the two-hour session.</p>
+
+  <table>
+    <thead>
+      <tr><th>Time</th><th>Event</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>00:00–00:10</td>
+        <td><strong>Introduction and scope of the session</strong></td>
+      </tr>
+      <tr>
+        <td>00:10–00:40</td>
+        <td><strong>Invited Talk</strong> — Yuki Asano (University of Technology Nuremberg)<br>
+          <span class="talk-title">Title to be defined</span></td>
+      </tr>
+      <tr>
+        <td>00:40–01:10</td>
+        <td><strong>Invited Talk</strong> — Desmond Elliot (University of Copenhagen)<br>
+          <span class="talk-title">Title to be defined</span></td>
+      </tr>
+      <tr>
+        <td>01:10–01:55</td>
+        <td><strong>Panel session</strong> with questions from the audience</td>
+      </tr>
+      <tr>
+        <td>01:55–02:00</td>
+        <td><strong>Concluding remarks</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ ORGANIZERS ============ -->
+<section id="organizers">
+  <h2>Organizers</h2>
+  <p>
+    The event is sponsored by two Horizon Europe projects that address key scientific and engineering challenges around multimodal models.
+  </p>
+  <p>
+    <strong><a href="https://elliot-ai.eu/" target="_blank" rel="noopener">ELLIOT</a></strong> (<a href="https://cordis.europa.eu/project/id/101214398" target="_blank" rel="noopener">GA No. 101214398</a>) is a Horizon Europe project that develops large-scale, open multimodal foundation models with strong spatio-temporal understanding. It uses European high-performance computing and combines real and synthetic data to support robust general-purpose AI across diverse modalities.
+  </p>
+  <p>
+    <strong><a href="https://dvps.translated.com/" target="_blank" rel="noopener">DVPS</a></strong> (<a href="https://cordis.europa.eu/project/id/101213369" target="_blank" rel="noopener">GA No. 101213369</a>) is a Horizon Europe project that advances the science and engineering of multimodal foundation models. It creates methods and tools that work across modalities and application domains, so these models can be developed more efficiently and made more accessible.
+  </p>
+
+  <div class="people">
+
+    <div class="person">
+      <div class="initials init-1">SB</div>
+      <p class="name"><a href="https://scholar.google.com/citations?user=Nz5BrdMAAAAJ" target="_blank" rel="noopener">Sébastien Bratières</a></p>
+      <p class="affiliation">Director of AI, Translated, Italy / <a href="https://dvps.translated.com/" target="_blank" rel="noopener">DVPS</a>, coordinator</p>
+    </div>
+
+    <div class="person">
+      <div class="initials init-2">YK</div>
+      <p class="name"><a href="https://mklab.iti.gr/people/ikom/" target="_blank" rel="noopener">Yiannis Kompatsiaris</a></p>
+      <p class="affiliation">Director, CERTH-ITI, Greece / <a href="https://elliot-ai.eu/" target="_blank" rel="noopener">ELLIOT</a>, coordinator</p>
+    </div>
+
+    <div class="person">
+      <div class="initials init-3">LB</div>
+      <p class="name"><a href="https://scholar.google.com/citations?user=P8opGwMAAAAJ" target="_blank" rel="noopener">Luisa Bentivogli</a></p>
+      <p class="affiliation">Head of Machine Translation Unit, FBK, Italy / <a href="https://dvps.translated.com/" target="_blank" rel="noopener">DVPS</a></p>
+    </div>
+
+    <div class="person">
+      <div class="initials init-4">FT</div>
+      <p class="name"><a href="https://orcid.org/0000-0002-5310-8045" target="_blank" rel="noopener">Filareti Tsalakanidou</a></p>
+      <p class="affiliation">Researcher, CERTH-ITI, Greece / <a href="https://elliot-ai.eu/" target="_blank" rel="noopener">ELLIOT</a></p>
+    </div>
+
+    <div class="person">
+      <div class="initials init-5">DH</div>
+      <p class="name"><a href="https://cris.cobiss.net/ecris/si/en/researcher/69223" target="_blank" rel="noopener">Damar Hoogland</a></p>
+      <p class="affiliation">Researcher, JSI, Slovenia / <a href="https://elliot-ai.eu/" target="_blank" rel="noopener">ELLIOT</a></p>
+    </div>
+
+    <div class="person">
+      <div class="initials init-6">LL</div>
+      <p class="name"><a href="https://loreloc.github.io/" target="_blank" rel="noopener">Lorenzo Loconte</a></p>
+      <p class="affiliation">Researcher, Pi School, Italy / <a href="https://dvps.translated.com/" target="_blank" rel="noopener">DVPS</a></p>
+    </div>
+
+    <div class="person">
+      <div class="initials init-7">LS</div>
+      <p class="name"><a href="https://l-scofano.github.io/" target="_blank" rel="noopener">Luca Scofano</a></p>
+      <p class="affiliation">Researcher, Translated, Italy / <a href="https://dvps.translated.com/" target="_blank" rel="noopener">DVPS</a></p>
+    </div>
+
+    <div class="person">
+      <div class="initials init-8">AS</div>
+      <p class="name"><a href="https://scholar.google.com/citations?user=lzFb_ZUAAAAJ" target="_blank" rel="noopener">Alessio Sampieri</a></p>
+      <p class="affiliation">Researcher, Translated, Italy / <a href="https://dvps.translated.com/" target="_blank" rel="noopener">DVPS</a></p>
+    </div>
+
+    <div class="person">
+      <div class="initials init-9">SM</div>
+      <p class="name"><a href="https://iris.uniroma1.it/cris/rp/rp312735" target="_blank" rel="noopener">Simone Mestici</a></p>
+      <p class="affiliation">Researcher, Pi School, Italy / <a href="https://dvps.translated.com/" target="_blank" rel="noopener">DVPS</a></p>
+    </div>
+
+    <div class="person">
+      <div class="initials init-10">RC</div>
+      <p class="name"><a href="https://github.com/RiccardoCorr" target="_blank" rel="noopener">Riccardo Corrente</a></p>
+      <p class="affiliation">Researcher, Pi School, Italy / <a href="https://dvps.translated.com/" target="_blank" rel="noopener">DVPS</a></p>
+    </div>
+
+  </div>
+
+  <div class="org-logos">
+    <a href="https://translated.com/" target="_blank" rel="noopener">
+      <img src="logos/translated.svg" alt="Translated" />
+    </a>
+    <a href="https://www.iti.gr/" target="_blank" rel="noopener">
+      <img src="logos/certh-iti.png" alt="CERTH-ITI" />
+    </a>
+    <a href="https://www.fbk.eu/en/" target="_blank" rel="noopener">
+      <img src="logos/fbk.png" alt="FBK" />
+    </a>
+    <a href="https://www.ijs.si/" target="_blank" rel="noopener">
+      <img src="logos/jsi.png" alt="Jožef Stefan Institute" />
+    </a>
+    <a href="https://picampus-school.com/" target="_blank" rel="noopener">
+      <img src="logos/pi-school.png" alt="Pi School" />
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <p>
+    Multimodality For Everyone (M4E) &middot; ELLIS UnConference<br>
+    Palais des Congrès de Paris &middot; 8 December 2026<br>
+    Sponsored by Europe Horizon projects<br>
+    <a href="https://dvps.translated.com/" target="_blank" rel="noopener">DVPS</a>
+    &middot;
+    <a href="https://elliot-ai.eu/" target="_blank" rel="noopener">ELLIOT</a>
+  </p>
+</footer>
+
+</body>
+</html>
