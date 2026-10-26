@@ -256,6 +256,9 @@
       color: #fff;
       margin-bottom: 0.4rem;
     }
+    #speakers .people {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
     #organizers .people {
       grid-template-columns: repeat(4, 1fr);
     }
@@ -333,6 +336,9 @@
       section { margin: 2rem 0.5rem; padding: 1.25rem; border-radius: 8px; }
       .people,
       #organizers .people { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+      #speakers .people {
+        grid-template-columns: repeat(auto-fit, minmax(max(140px, calc((100% - 3rem) / 3)), 1fr));
+      }
       .org-logos { gap: 1.25rem 1.5rem; }
       .org-logos a { height: 56px; }
       .org-logos img { max-height: 44px; max-width: min(160px, 100%); }
